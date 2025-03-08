@@ -66,27 +66,6 @@ button {
         <div id="result"></div>
     </div>
 </div>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#upload-form').on('submit', function (event) {
-                    event.preventDefault();
-                    var formData = new FormData(this);
-                    $.ajax({
-                        url: '/upload',
-                        type: 'POST',
-                        data: formData,
-                        processData: false,
-                        contentType: false,
-                        success: function (response) {
-                            $('#result').html(response);
-                        },
-                        error: function (error) {
-                            $('#result').html('<p>Error: ' + error.responseText + '</p>');
-                        }
-                    });
-                });
-            });
-        </script>
+        <script src="script.js"></script>
     </body>
     </html>
