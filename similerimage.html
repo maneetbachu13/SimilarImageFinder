@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Similar Image Finder</title>
+    <style>
+        body, html {
+            margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A6C4B5;
+        }
+#fp{
+    font-size:15px;
+}
+.signup-form {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-family:Times New Roman;
+
+}
+.login-form{
+    background-color: rgba(249, 247, 244, 0.268);
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    text-align: center;
+    height: 30vh;
+    font-family:Times New Roman;
+    color: white;
+
+}
+.login-form input {
+           background-color: #6F7471;
+            width :80%;
+            height: 10px;
+            padding:5%;
+            border :none;
+            border-radius: 5px;
+            bottom: 30px;
+            font-family:Times New Roman;
+            color:#ffffff;
+            
+        }
+.signup-form input{
+           background-color: #6F7471;
+            width :150%;
+            padding:20%;
+            border :none;
+            border-radius: 5px;
+            font-family:Times New Roman;
+            color: #ffffff;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+}
+.background{
+    text-align: center;
+    color: white;
+}
+input::placeholder {
+    color: #a0a0a0; 
+    font-style: italic; 
+}
+
+    </style>
+</head>
+    <body>
+        <div class="background">
+                <div class="login-form">
+                    <form name="form1" action="http://127.0.0.1:5000"><br<br>
+                        <input type="text" name="username" placeholder="enter username" name="t1" required><br><br>
+                        <input type="password" name="password" placeholder="enter password" name="t2"required><br><br>
+                        <a href="fp.html" id="fp">forgot password?</a><br><br><br><br>
+                            <input type="submit" value="login" style="width: 50px;height: 30px">
+                        </div>
+                    </form>
+                </div>
+        <div class="signup-form">
+        <form name="form2" action="signup.html">
+            <input type="submit" value="sign up">
+        </form>
+    </div>
+</div>
+    </body> </html>

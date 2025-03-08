@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Similar Image Finder</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+   body, html {
+        margin: 0;
+padding: 0;
+height: 100%;
+font-family: Arial, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #A6C4B5;
+   }
+.upload label{
+    display: flex;
+justify-content: center;
+    font-size:20px;
+    position:absolute;
+    top: 180px;
+    width: 100% ;
+    align-items:center;
+    right: 730px;
+    color: rgb(255, 252, 252);
+}
+.upload button{
+    background-color: #ffffff8f;
+    width: auto;
+    padding: 10;
+}
+button {
+                padding: 5px 10px;
+                font-size: 10px;
+                cursor: pointer;
+            }
+            #result {
+                margin-top: 20px;
+            }
+            .image-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .image-container img {
+                max-width: 200px;
+                max-height: 200px;
+                border: 2px solid #ccc;
+                border-radius: 10px;
+            }
+    </style>
+</head>
+    <body>
+        <div class="background"></div>
+        <div class="upload"></div>
+        <form id="upload-form" method="post" enctype="multipart/form-data">
+            <input type="file" name="target_image" accept="image/*" required><br><br><br>
+            <input type="file" name="image_files" accept="image/*" multiple required><br><br><br>
+            <input type="number" name="threshold" step="0.01" min="0" max="1" placeholder="Enter threshold (0-1)" required><br><br>
+            <button type="submit">search</button>
+        </form>
+        <div id="result"></div>
+    </div>
+</div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#upload-form').on('submit', function (event) {
+                    event.preventDefault();
+                    var formData = new FormData(this);
+                    $.ajax({
+                        url: '/upload',
+                        type: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function (response) {
+                            $('#result').html(response);
+                        },
+                        error: function (error) {
+                            $('#result').html('<p>Error: ' + error.responseText + '</p>');
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+    </html>

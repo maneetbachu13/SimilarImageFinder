@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Similar Image Finder</title>
+    <style>
+    body, html {
+        margin: 0;
+padding: 0;
+height: 100%;
+font-family: Arial, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #A6C4B5;
+    }
+#fp{
+font-size:10px;
+}
+.signup-form {
+position: absolute;
+top: 50px;
+right: 50px;
+font-family:Times New Roman;
+
+}
+.login-form{
+background-color: rgba(249, 247, 244, 0.268);
+padding: 10px;
+width: 200px;
+border-radius: 5px;
+text-align: center;
+height: 40vh;
+font-family:Times New Roman;
+color: white;
+
+}
+.login-form input {
+       background-color: #6F7471;
+        width :80%;
+        height: 10px;
+        padding:5%;
+        border :none;
+        border-radius: 5px;
+        bottom: 30px;
+        font-family:Times New Roman;
+        color:#ffffff;
+        
+    }
+.signup-form input{
+       background-color: #6F7471;
+        width :150%;
+        padding:20%;
+        border :none;
+        border-radius: 5px;
+        font-family:Times New Roman;
+        color: #ffffff;
+}
+ button a {
+            text-decoration: none; /* Remove underline */
+            color: #000; /* Set text color to match button */
+            display: block; /* Ensure the entire button is clickable */
+            width: 100%;
+            height: 100%;
+        }
+
+        button a:hover {
+            color: #cccccc; /* Optional hover effect */
+        }
+.background{
+text-align: center;
+color: white;
+}
+input::placeholder {
+    color: #a0a0a0; 
+    font-style: italic; 
+}
+</style>
+    </head>
+    <body>
+        <div class="background"> 
+        <div class="login-form" id="login">
+        <form name="form1" action="http://127.0.0.1:5500/second.html" method="post"><br<br>
+        <input type="email" placeholder="enter email address" id="email" name="email" required ><br><br>
+        <input type="text" placeholder="enter new username" name="t1" required><br><br>
+        <input type="password" placeholder="create password" name="t2" id="pass1" required><br><br>
+        <input type="text" placeholder="confirm password" name="t3" id="pass2" required><br><br>
+        <span id="passwordError" class="error"></span>
+<div class="signup-formbutton">
+        <button><a href="second.html" target="blank">sign up</a></button>
+    </div>
+        </form>
+        
+    </div>
+</div>
+        </div>
+        <script>
+            console.log('abc');
+            document.getElementById("login").addEventListener("submit", function(event) {
+                var password1 = document.getElementById("pass1").value;
+                var password2 = document.getElementById("pass2").value;
+                var passwordError = document.getElementById("passwordError");
+    
+                if (password1 !== password2) {
+                    passwordError.textContent = "Passwords do not match.";
+                    event.preventDefault();
+                } else {
+                    passwordError.textContent = "";
+                }
+            });
+        </script>
+    </body>
+    </html>
